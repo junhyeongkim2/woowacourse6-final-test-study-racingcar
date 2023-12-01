@@ -10,4 +10,10 @@ public class InputView {
         return input;
     }
 
+    public String readTryNumber() {
+        System.out.println("시도할 회수는 몇회인가요?");
+        String input = Console.readLine();
+        return input;
+    }
+
 }
