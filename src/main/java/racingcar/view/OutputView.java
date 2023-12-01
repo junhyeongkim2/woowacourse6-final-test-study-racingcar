@@ -8,14 +8,20 @@ import racingcar.model.Winners;
 
 public class OutputView implements Output {
 
+    private final String PRINT_CAR_LOCATION_START_MESSAGE = "실행 결과";
+    private final String PRINT_WINNERS_MESSAGE = "최종 우승자 : ";
+    private final String COMMA = ",";
+    private final String CAR_LOCATION_MESSAGE = "%s : %s%n";
+    private final String CAR_LOCATION = "-";
+
     @Override
     public void printCarLocationsStartMessage() {
-        System.out.println("실행 결과");
+        System.out.println(PRINT_CAR_LOCATION_START_MESSAGE);
     }
 
     @Override
     public void printWinners(Winners winners) {
-        System.out.print("최종 우승자 : " + String.join(",", winners.getWinners()));
+        System.out.print(PRINT_WINNERS_MESSAGE + String.join(COMMA, winners.getWinners()));
     }
 
 
@@ -26,8 +32,8 @@ public class OutputView implements Output {
     }
 
     private void printCarInfo(Vehicle car) {
-        String locationIndicator = "-".repeat(car.getLocation());
-        System.out.printf("%s : %s%n", car.getName(), locationIndicator);
+        String locationIndicator = CAR_LOCATION.repeat(car.getLocation());
+        System.out.printf(CAR_LOCATION_MESSAGE, car.getName(), locationIndicator);
     }
 
 
