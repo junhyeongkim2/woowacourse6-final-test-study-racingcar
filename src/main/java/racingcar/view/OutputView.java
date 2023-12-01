@@ -8,7 +8,7 @@ import racingcar.model.Winners;
 
 public class OutputView implements Output {
 
-    private final String PRINT_CAR_LOCATION_START_MESSAGE = "실행 결과";
+    private final String PRINT_CAR_LOCATION_START_MESSAGE = "\n실행 결과";
     private final String PRINT_WINNERS_MESSAGE = "최종 우승자 : ";
     private final String COMMA = ",";
     private final String CAR_LOCATION_MESSAGE = "%s : %s%n";
