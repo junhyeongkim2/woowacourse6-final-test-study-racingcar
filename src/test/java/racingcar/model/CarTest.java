@@ -31,8 +31,5 @@ public class CarTest {
         location = car.moveForward(2);
         //then
         assertThat(location).isEqualTo(0);
-
     }
-
-
 }
