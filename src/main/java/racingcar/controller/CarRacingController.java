@@ -18,6 +18,11 @@ public class CarRacingController {
 
     public void start() {
         Cars cars = Cars.of(inputView.readCarNames());
+        int tryNumber = Integer.parseInt(inputView.readTryNumber());
+        for (int i = 0; i < tryNumber; i++) {
+            outputView.printCarLocations(cars.moveForwardAll());
+        }
+
 
     }
 
