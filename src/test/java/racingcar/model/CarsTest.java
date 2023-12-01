@@ -36,4 +36,16 @@ public class CarsTest {
 
     }
 
+    @DisplayName("자동차 이름 5자리 초과 입력 예외 발생 테스트")
+    @Test
+    void of_IsOverFiveNameLength_ExceptionThrow() {
+        //given
+        //when
+        //then
+        assertThatThrownBy(() -> Cars.of("pobi,king,jun,aaaaaa")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 이름은 5자 이하만 가능합니다.");
+        assertThatThrownBy(() -> Cars.of("pobi,king,fivenames,a")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 이름은 5자 이하만 가능합니다.");
+    }
+
 }
