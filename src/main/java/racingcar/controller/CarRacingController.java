@@ -10,6 +10,8 @@ import racingcar.view.Output;
 import racingcar.view.OutputView;
 
 public class CarRacingController {
+
+    private final int START_NUMBER = 0;
     private final Input inputView;
     private final Output outputView;
     private final CarRacingService carRacingService;
@@ -29,7 +31,7 @@ public class CarRacingController {
     }
 
     private void repeatMoveForwardAll(Cars cars, int tryNumber) {
-        for (int i = 0; i < tryNumber; i++) {
+        for (int i = START_NUMBER; i < tryNumber; i++) {
             outputView.printCarLocations(carRacingService.moveForwardAll(cars));
         }
     }
