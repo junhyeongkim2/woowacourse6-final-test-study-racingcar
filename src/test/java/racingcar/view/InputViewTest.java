@@ -35,7 +35,7 @@ public class InputViewTest {
     @Test
     void readCarNames_IsNotValidForm_ExceptionThrow() {
         //given
-        ByteArrayInputStream fakeInput = new ByteArrayInputStream("jun,pobi%,,".getBytes());
+        ByteArrayInputStream fakeInput = new ByteArrayInputStream("jun,pobi,king,kk12,,^".getBytes());
         System.setIn(fakeInput);
         InputView inputView = new InputView();
         //when

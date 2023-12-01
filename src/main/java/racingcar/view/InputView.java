@@ -9,6 +9,7 @@ public class InputView implements Input {
     public String readCarNames() {
         System.out.println("경주할 자동차 이름을 입력하세요. (이름은 쉼표(,) 기준으로 구분)");
         String input = Console.readLine();
+        validateReadCarNamesForm(input);
         return input;
     }
 
@@ -28,7 +29,7 @@ public class InputView implements Input {
     }
 
     private void validateReadCarNamesForm(String input) {
-        if (!Pattern.matches("^[\\w]+(,[\\w]+)+$\n", input)) {
+        if (!Pattern.matches("^(?:[a-zA-Z가-힣1-9]+,)*[a-zA-Z가-힣1-9]+$", input)) {
             throw new IllegalArgumentException("[ERROR] 자동차 이름이 형식에 맞지 않습니다.");
         }
     }
