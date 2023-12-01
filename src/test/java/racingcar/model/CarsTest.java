@@ -21,4 +21,19 @@ public class CarsTest {
         assertThat(carLocations.size()).isEqualTo(3);
     }
 
+    @DisplayName("중복된 이름 발생 예외 발생 테스트")
+    @Test
+    void of_IsDuplicate_ExceptionThrow() {
+        //given
+        //when
+        //then
+        assertThatThrownBy(() -> Cars.of("pobi,king,jun,pobi")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 중복된 이름이 발생했습니다.");
+        assertThatThrownBy(() -> Cars.of("pobi,king,jun,king,king")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 중복된 이름이 발생했습니다.");
+        assertThatThrownBy(() -> Cars.of("pobi,king,jun,jun")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 중복된 이름이 발생했습니다.");
+
+    }
+
 }
