@@ -13,7 +13,7 @@ public class CarsTest {
     @Test
     void moveForwardAll_EqualResult_Success() {
         //given
-        Cars cars = new Cars(List.of(new Car("pobi", 0), new Car("woni", 0), new Car("jun", 0)));
+        Cars cars = Cars.of("pobi,king,jun");
         //when
         List<Car> carLocations = cars.moveForwardAll();
         //then

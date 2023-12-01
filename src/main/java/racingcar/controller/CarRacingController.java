@@ -9,8 +9,8 @@ import racingcar.view.Output;
 import racingcar.view.OutputView;
 
 public class CarRacingController {
-    Input inputView;
-    Output outputView;
+    private final Input inputView;
+    private final Output outputView;
 
     public CarRacingController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
@@ -24,9 +24,7 @@ public class CarRacingController {
         for (int i = 0; i < tryNumber; i++) {
             outputView.printCarLocations(cars.moveForwardAll());
         }
-        Winners winners = new Winners(cars.getCars());
-        outputView.printWinners(winners);
-
+        outputView.printWinners(new Winners(cars.getCars()));
     }
 
 
