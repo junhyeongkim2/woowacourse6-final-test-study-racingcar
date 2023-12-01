@@ -1,7 +1,6 @@
 package racingcar.model;
 
 public class Car {
-
     private final String name;
     private int location;
 
@@ -16,4 +15,6 @@ public class Car {
         }
         return location;
     }
+
+
 }
