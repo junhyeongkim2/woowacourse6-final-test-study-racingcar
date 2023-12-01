@@ -48,4 +48,16 @@ public class CarsTest {
                 .hasMessage("[ERROR] 이름은 5자 이하만 가능합니다.");
     }
 
+    @DisplayName("자동차 빈 이름 입력 예외 발생 테스트")
+    @Test
+    void of_IsUnderOneNameLength_ExceptionThrow() {
+        //given
+        //when
+        //then
+        assertThatThrownBy(() -> Cars.of("pobi,king,,jun")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 이름은 한 글자 이상부터 가능합니다.");
+        assertThatThrownBy(() -> Cars.of(",king,jun")).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 이름은 한 글자 이상부터 가능합니다.");
+    }
+
 }

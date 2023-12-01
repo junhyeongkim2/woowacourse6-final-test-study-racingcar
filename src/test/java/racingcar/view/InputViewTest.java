@@ -18,7 +18,7 @@ public class InputViewTest {
 
     @DisplayName("시도 회수 입력 시 숫자가 아닌 경우 에러 발생 테스트")
     @Test
-    void readCarNames_IsNotValidForm_ExceptionThrow() {
+    void readTryNumber_IsNotInteger_ExceptionThrow() {
         //given
         ByteArrayInputStream fakeInput = new ByteArrayInputStream("abc".getBytes());
         System.setIn(fakeInput);
@@ -30,5 +30,22 @@ public class InputViewTest {
                 .hasMessage("[ERROR] 시도 회수는 숫자만 입력할 수 있습니다.");
 
     }
+
+    @DisplayName("자동차 이름 입력 시 형식에 맞지 않는 경우 에러 발생 테스트")
+    @Test
+    void readCarNames_IsNotValidForm_ExceptionThrow() {
+        //given
+        ByteArrayInputStream fakeInput = new ByteArrayInputStream("jun,pobi%,,".getBytes());
+        System.setIn(fakeInput);
+        InputView inputView = new InputView();
+        //when
+
+        //then
+        assertThatThrownBy(() -> inputView.readCarNames()).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 자동차 이름이 형식에 맞지 않습니다.");
+
+    }
+
+
 
 }

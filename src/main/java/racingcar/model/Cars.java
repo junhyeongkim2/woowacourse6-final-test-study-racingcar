@@ -17,6 +17,7 @@ public class Cars {
         List<String> names = List.of(carNames.split(","));
         validateDuplicate(names);
         validateIsOverFiveNameLength(names);
+        validateNullName(names);
         return new Cars(names.stream().map(name -> new Car(name, 0)).collect(Collectors.toList()));
     }
 
@@ -35,13 +36,20 @@ public class Cars {
         }
     }
 
-    private static void validateIsOverFiveNameLength(List<String>names){
-        for(String name : names){
-            if(name.length()>5){
+    private static void validateIsOverFiveNameLength(List<String> names) {
+        for (String name : names) {
+            if (name.length() > 5) {
                 throw new IllegalArgumentException("[ERROR] 이름은 5자 이하만 가능합니다.");
             }
         }
+    }
 
+    private static void validateNullName(List<String> names) {
+        for (String name : names) {
+            if (name.equals("")) {
+                throw new IllegalArgumentException("[ERROR] 이름은 한 글자 이상부터 가능합니다.");
+            }
+        }
     }
 
 

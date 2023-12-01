@@ -27,5 +27,11 @@ public class InputView implements Input {
         }
     }
 
+    private void validateReadCarNamesForm(String input) {
+        if (!Pattern.matches("^[\\w]+(,[\\w]+)+$\n", input)) {
+            throw new IllegalArgumentException("[ERROR] 자동차 이름이 형식에 맞지 않습니다.");
+        }
+    }
+
 
 }
