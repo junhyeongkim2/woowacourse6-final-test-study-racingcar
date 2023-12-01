@@ -1,6 +1,8 @@
 package racingcar.model;
 
 public class Car implements Vehicle {
+    private final int FORWARD_POSSIBLE_NUMBER = 4;
+    private final int FORWARD_AMOUNT = 1;
     private final String name;
     private int location;
 
@@ -10,8 +12,8 @@ public class Car implements Vehicle {
     }
 
     public int moveForward(int randomNumber) {
-        if (randomNumber >= 4) {
-            return location += 1;
+        if (randomNumber >= FORWARD_POSSIBLE_NUMBER) {
+            return location += FORWARD_AMOUNT;
         }
         return location;
     }
