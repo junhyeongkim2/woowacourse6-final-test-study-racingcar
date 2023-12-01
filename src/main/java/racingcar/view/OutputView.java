@@ -3,6 +3,7 @@ package racingcar.view;
 import java.util.List;
 import java.util.stream.IntStream;
 import racingcar.model.Car;
+import racingcar.model.Vehicle;
 import racingcar.model.Winners;
 
 public class OutputView implements Output {
@@ -19,12 +20,12 @@ public class OutputView implements Output {
 
 
     @Override
-    public void printCarLocations(List<Car> cars) {
+    public void printCarLocations(List<Vehicle> cars) {
         cars.stream().forEach(this::printCarInfo);
         System.out.println();
     }
 
-    private void printCarInfo(Car car) {
+    private void printCarInfo(Vehicle car) {
         String locationIndicator = "-".repeat(car.getLocation());
         System.out.printf("%s : %s%n", car.getName(), locationIndicator);
     }

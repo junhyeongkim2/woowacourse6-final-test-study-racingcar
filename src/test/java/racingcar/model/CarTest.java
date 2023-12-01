@@ -13,7 +13,7 @@ public class CarTest {
     @Test
     void moveForward_EqualForwardLocation_Success() {
         //given
-        Car car = new Car("new Car", 0);
+        Vehicle car = new Car("new Car", 0);
         //when
         int location = car.moveForward(5);
         location = car.moveForward(8);
@@ -25,7 +25,7 @@ public class CarTest {
     @Test
     void moveForward_EqualFailLocation_Success() {
         //given
-        Car car = new Car("new Car", 0);
+        Vehicle car = new Car("new Car", 0);
         //when
         int location = car.moveForward(3);
         location = car.moveForward(2);

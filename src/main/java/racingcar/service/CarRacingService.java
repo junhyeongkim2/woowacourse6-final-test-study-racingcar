@@ -12,7 +12,7 @@ public class CarRacingService {
         return Cars.of(carNames);
     }
 
-    public List<Car> moveForwardAll(Cars cars) {
+    public List<Vehicle> moveForwardAll(Cars cars) {
         return cars.moveForwardAll();
     }
 

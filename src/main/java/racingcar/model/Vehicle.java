@@ -6,4 +6,6 @@ public interface Vehicle {
 
     public int getLocation();
 
+    public String getName();
+
 }

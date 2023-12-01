@@ -8,11 +8,11 @@ public class Winners {
 
     private final List<String> winners;
 
-    public Winners(List<Car> cars) {
+    public Winners(List<Vehicle> cars) {
         this.winners = judgeWinners(cars);
     }
 
-    public List<String> judgeWinners(List<Car> cars) {
+    public List<String> judgeWinners(List<Vehicle> cars) {
         int maxValue = cars.stream().mapToInt(car -> car.getLocation()).max().orElseThrow();
         return cars.stream().filter(car -> car.getLocation() == maxValue).map(car -> car.getName())
                 .collect(Collectors.toList());

@@ -15,7 +15,7 @@ public class CarsTest {
         //given
         Cars cars = Cars.of("pobi,king,jun");
         //when
-        List<Car> carLocations = cars.moveForwardAll();
+        List<Vehicle> carLocations = cars.moveForwardAll();
         //then
         carLocations.stream().forEach(carLocation -> System.out.println(carLocation.getLocation()));
         assertThat(carLocations.size()).isEqualTo(3);

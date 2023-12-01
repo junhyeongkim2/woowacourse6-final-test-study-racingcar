@@ -7,9 +7,9 @@ import net.bytebuddy.pool.TypePool.Resolution.Illegal;
 
 public class Cars {
 
-    private final List<Car> cars;
+    private final List<Vehicle> cars;
 
-    private Cars(List<Car> cars) {
+    private Cars(List<Vehicle> cars) {
         this.cars = cars;
     }
 
@@ -21,12 +21,12 @@ public class Cars {
         return new Cars(names.stream().map(name -> new Car(name, 0)).collect(Collectors.toList()));
     }
 
-    public List<Car> moveForwardAll() {
+    public List<Vehicle> moveForwardAll() {
         cars.stream().forEach(car -> car.moveForward(RandomNumberGenerator.generate()));
         return cars;
     }
 
-    public List<Car> getCars() {
+    public List<Vehicle> getCars() {
         return Collections.unmodifiableList(cars);
     }
 
