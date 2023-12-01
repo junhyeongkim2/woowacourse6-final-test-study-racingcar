@@ -16,5 +16,9 @@ public class Car {
         return location;
     }
 
+    public int getLocation() {
+        return location;
+    }
+
 
 }
