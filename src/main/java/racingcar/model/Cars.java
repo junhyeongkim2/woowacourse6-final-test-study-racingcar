@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +20,10 @@ public class Cars {
     public List<Car> moveForwardAll() {
         cars.stream().forEach(car -> car.moveForward(RandomNumberGenerator.generate()));
         return cars;
+    }
+
+    public List<Car> getCars() {
+        return Collections.unmodifiableList(cars);
     }
 
 

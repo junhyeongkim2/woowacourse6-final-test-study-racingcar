@@ -2,6 +2,7 @@ package racingcar.controller;
 
 import racingcar.model.Car;
 import racingcar.model.Cars;
+import racingcar.model.Winners;
 import racingcar.view.Input;
 import racingcar.view.InputView;
 import racingcar.view.Output;
@@ -23,7 +24,8 @@ public class CarRacingController {
         for (int i = 0; i < tryNumber; i++) {
             outputView.printCarLocations(cars.moveForwardAll());
         }
-
+        Winners winners = new Winners(cars.getCars());
+        outputView.printWinners(winners);
 
     }
 
