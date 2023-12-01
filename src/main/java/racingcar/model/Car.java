@@ -1,6 +1,6 @@
 package racingcar.model;
 
-public class Car {
+public class Car implements Vehicle {
     private final String name;
     private int location;
 
